@@ -1,20 +1,24 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
 import CookTable from "../CookTable/CookTable";
 import Cookies from "../Coookies/Cookies";
 
-export default function Main() {
+export default function Main({ toast }) {
     const [cookData, setCookData] = useState([]);
     const [removeData, setRemove] = useState([]);
     const [time, setTime] = useState(0)
-    const [calcium, setCalories] = useState(0)
+    const [calcium, setCalories] = useState(0);
 
 
     const handleCookData = (data) => {
         const isExist = cookData.find(item => item.recipe_id === data.recipe_id);
         if (!isExist) {
             setCookData([...cookData, data]);
+            toast.success("Added Item To Cook");
         } else {
-            alert("Already Exists")
+            toast.error("Already Exists This Item");
+
+
         }
     };
 
@@ -36,11 +40,14 @@ export default function Main() {
                     The kitchen is a sanctuary—a place where time slows down, and worries melt away. Whether you’re kneading dough for fresh bread, searing a steak to perfection, or simmering a comforting soup, you’re creating more than a meal. You’re creating memories—shared laughter around the dining table, secret family recipes passed down through generations, and the joy of nourishing others.
                 </p>
             </div>
-            <div className="flex flex-col lg:flex-row justify-around gap-5 p-4 container m-auto">
+            <div id="cooking" className="flex flex-col lg:flex-row justify-around gap-5 p-4 container m-auto">
                 <Cookies handleCookData={handleCookData}></Cookies>
                 <CookTable cooks={cookData} handleRemove={handleRemove} removeData={removeData} time={time} calcium={calcium}></CookTable>
             </div>
 
         </div>
     )
+}
+Main.prototype = {
+    toast: PropTypes.object
 }

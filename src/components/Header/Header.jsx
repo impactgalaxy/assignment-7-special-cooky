@@ -3,7 +3,7 @@ export default function Header() {
         <div className="p-4">
             <div className="navbar bg-base-100 flex justify-between">
                 <div>
-                    <a className="btn btn-ghost text-xl text-[#150B2B]">Special Cooky</a>
+                    <a className="btn btn-ghost text-xl text-[#844dfc]">Special Cooky</a>
                 </div>
                 <div className="space-x-3 hidden lg:flex">
                     <p>Home</p>
@@ -39,7 +39,7 @@ export default function Header() {
                 <h1 className="font-black text-3xl lg:text-6xl text-neutral-300">Discover an exceptional cooking class tailored for you!</h1>
                 <p className="text-white"> It’s a symphony of flavors, a dance of ingredients, and a canvas for creativity. When you step into the kitchen, you become a composer, blending spices, herbs, and textures to create harmonious dishes. </p>
                 <div className="space-x-4">
-                    <button className="btn bg-[#0BE58A] font-bold">Explore</button>
+                    <a className="btn bg-[#0BE58A] font-bold" href="#cooking">Explore</a>
                     <button className="btn">Feed Back</button>
                 </div>
 
