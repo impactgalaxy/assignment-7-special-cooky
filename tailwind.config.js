@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-pattern': "url('./public/cook.jpg')",
+        'hero-pattern': "url('./cook.jpg')",
         'footer-texture': "url('/img/footer-texture.png')",
       }
     },

@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 export default function Cook({ cooks, handleCookData }) {
     const { recipe_name, recipe_image, short_description, ingredients, preparing_time, calories } = cooks;
     return (
         <div>
             <div className="card w-80 glass p-4">
-                <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="car!" /></figure>
+                <figure><img src={recipe_image} alt={recipe_name} /></figure>
                 <div className="p-2">
                     <h2 className="card-title">{recipe_name}</h2>
                     <p>{short_description}</p>
@@ -27,5 +27,6 @@ export default function Cook({ cooks, handleCookData }) {
 
 }
 Cook.propTypes = {
-    cooks: PropTypes.object
+    cooks: PropTypes.object,
+    handleCookData: PropTypes.func
 }

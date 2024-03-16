@@ -1,19 +1,13 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+// import { useState } from 'react';
 
-function CookTable({ cooks }) {
-    const [removeData, setRemove] = useState([]);
+function CookTable({ cooks, handleRemove, removeData, time, calcium }) {
 
-    const handleRemove = (id) => {
-        //const newArr = cooks.filter(item => item.recipe_id !== id);
-        console.log(id);
-        setRemove([...removeData, id]);
-    }
 
     return (
         <div className='p-4 border lg:w-1/2 rounded-lg'>
-            <table className='w-full *:font-normal'>
-                <caption>Want to cook {cooks.length}</caption>
+            <table className='w-full'>
+                <caption className='border-b-2 p-4 font-black'>Want to cook {cooks.length}</caption>
                 <thead>
                     <tr className='*:font-normal'>
                         <th></th>
@@ -39,9 +33,9 @@ function CookTable({ cooks }) {
                 </tbody>
             </table>
 
-            <div>
-                <table className='w-full *:font-normal'>
-                    <caption>Currently Cooking Item {removeData.length < 10 ? "0" + removeData.length : removeData.length}</caption>
+            <div className='mt-24'>
+                <table className='w-full'>
+                    <caption className='border-b-2 p-4 font-black'>Currently Cooking Item {removeData.length < 10 ? "0" + removeData.length : removeData.length}</caption>
                     <thead>
                         <tr className='*:font-normal'>
                             <th></th>
@@ -67,13 +61,19 @@ function CookTable({ cooks }) {
                     </tbody>
                 </table>
             </div>
+            <div className='p-5 '>
+                <h1>Total time = {time} mins</h1>
+                <h1>Total calories = {calcium} calories</h1>
+            </div>
 
         </div>
     )
 }
 
 CookTable.propTypes = {
-    cooks: PropTypes.array
+    cooks: PropTypes.array,
+    handleRemove: PropTypes.func,
+    removeData: PropTypes.array
 
 }
 

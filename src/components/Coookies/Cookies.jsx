@@ -6,7 +6,7 @@ export default function Cookies({ handleCookData }) {
     const [myData, setData] = useState([]);
 
     useEffect(() => {
-        fetch("../../../public/myData.json")
+        fetch("./myData.json")
             .then(res => res.json())
             .then(data => setData(data));
     }, [])

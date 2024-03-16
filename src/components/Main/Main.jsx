@@ -4,14 +4,29 @@ import Cookies from "../Coookies/Cookies";
 
 export default function Main() {
     const [cookData, setCookData] = useState([]);
+    const [removeData, setRemove] = useState([]);
+    const [time, setTime] = useState(0)
+    const [calcium, setCalories] = useState(0)
+
 
     const handleCookData = (data) => {
         const isExist = cookData.find(item => item.recipe_id === data.recipe_id);
         if (!isExist) {
             setCookData([...cookData, data]);
         } else {
-            alert("Already Exist")
+            alert("Already Exists")
         }
+    };
+
+
+    const handleRemove = (data) => {
+        const t = data.preparing_time.split(/\D/)[0];
+        const c = data.calories.split(/\D/)[0];
+        setRemove([...removeData, data]);
+        const newItemForCookData = cookData.filter(rmv => rmv.recipe_id !== data.recipe_id);
+        setCookData(newItemForCookData);
+        setTime(time + parseInt(t));
+        setCalories(calcium + parseInt(c));
     }
     return (
         <div>
@@ -23,7 +38,7 @@ export default function Main() {
             </div>
             <div className="flex flex-col lg:flex-row justify-around gap-5 p-4 container m-auto">
                 <Cookies handleCookData={handleCookData}></Cookies>
-                <CookTable cooks={cookData}></CookTable>
+                <CookTable cooks={cookData} handleRemove={handleRemove} removeData={removeData} time={time} calcium={calcium}></CookTable>
             </div>
 
         </div>
