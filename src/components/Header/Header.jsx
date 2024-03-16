@@ -36,7 +36,7 @@ export default function Header() {
                 </div>
             </div>
             <div className="flex justify-center items-center gap-4 p-6 container m-auto flex-col text-center bg-hero-pattern bg-center bg-cover rounded-xl mt-8">
-                <h1 className="font-black text-3xl lg:text-6xl text-white">Discover an exceptional cooking class tailored for you!</h1>
+                <h1 className="font-black text-3xl lg:text-6xl text-neutral-300">Discover an exceptional cooking class tailored for you!</h1>
                 <p className="text-white"> It’s a symphony of flavors, a dance of ingredients, and a canvas for creativity. When you step into the kitchen, you become a composer, blending spices, herbs, and textures to create harmonious dishes. </p>
                 <div className="space-x-4">
                     <button className="btn bg-[#0BE58A] font-bold">Explore</button>

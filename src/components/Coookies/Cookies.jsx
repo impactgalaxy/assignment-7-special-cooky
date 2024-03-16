@@ -11,7 +11,7 @@ export default function Cookies({ handleCookData }) {
             .then(data => setData(data));
     }, [])
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 p-3 lg:w-2/4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 sm:gap-4 md:gap-3 gap-2 p-3 lg:w-2/4 place-items-center">
             {myData.map(cook => <Cook key={cook.recipe_id}
                 cooks={cook}
                 handleCookData={handleCookData}></Cook>)}

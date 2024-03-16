@@ -19,7 +19,7 @@ export default function Cook({ cooks, handleCookData }) {
                     <p><i className="fa-solid fa-clock"></i> {preparing_time}</p>
                     <p><i className="fa-solid fa-fire"></i> {calories}</p>
                 </div>
-                <button className="btn btn-primary" onClick={() => handleCookData(cooks)}>Want to cook</button>
+                <button className="btn btn-primary rounded-3xl text-white" onClick={() => handleCookData(cooks)}>Want to cook</button>
             </div>
 
         </div>
