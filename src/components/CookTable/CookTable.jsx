@@ -21,7 +21,7 @@ function CookTable({ cooks, handleRemove, removeData, time, calcium }) {
                 <tbody className='space-y-4'>
                     {cooks.map((data, index) => {
                         return (
-                            <tr key={index} className=' shadow-sm *:font-normal border'>
+                            <tr key={index} className=' shadow-sm *:font-normal border p-3'>
                                 <th>{index + 1}</th>
                                 <th>{data.recipe_name}</th>
                                 <th>{data.preparing_time}</th>
@@ -49,7 +49,7 @@ function CookTable({ cooks, handleRemove, removeData, time, calcium }) {
                     <tbody className='space-y-4'>
                         {removeData.map((data, index) => {
                             return (
-                                <tr key={index} className=' shadow-sm *:font-normal border'>
+                                <tr key={index} className=' shadow-sm *:font-normal border p-3'>
                                     <th>{index + 1}</th>
                                     <th>{data.recipe_name}</th>
                                     <th>{data.preparing_time}</th>
@@ -73,7 +73,9 @@ function CookTable({ cooks, handleRemove, removeData, time, calcium }) {
 CookTable.propTypes = {
     cooks: PropTypes.array,
     handleRemove: PropTypes.func,
-    removeData: PropTypes.array
+    removeData: PropTypes.array,
+    time: PropTypes.number,
+    calcium: PropTypes.number
 
 }
 
